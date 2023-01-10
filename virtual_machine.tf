@@ -19,7 +19,7 @@ resource "oci_core_instance" "ampere_a1" {
   }
   source_details {
     source_type = "image"
-    source_id   = data.oci_core_images.ubuntu-22_04-aarch64.images.0.id
+    source_id   = data.oci_core_images.ubuntu-20_04-aarch64.images.0.id
   }
 
   metadata = {

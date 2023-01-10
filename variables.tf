@@ -45,13 +45,18 @@ variable "oci_vm_count" {
 }
 
 variable "ampere_a1_vm_memory" {
-    default = "6"
+    default = "12"
     description = "Default RAM in GB for Ampere A1 instances in OCI Free Tier"
     type    = string
 }
 
 variable "ampere_a1_cpu_core_count" {
-    default = "1"
+    default = "2"
     description = "Default core count for Ampere A1 instances in OCI Free Tier"
     type    = string
+}
+variable deathstarbench_repository_url {
+    default = "https://github.com/delimitrou/DeathStarBench.git"
+    type    = string
+    description = "DeathStarBench repository url"
 }
