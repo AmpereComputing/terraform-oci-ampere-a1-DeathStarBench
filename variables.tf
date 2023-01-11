@@ -45,13 +45,13 @@ variable "oci_vm_count" {
 }
 
 variable "ampere_a1_vm_memory" {
-    default = "12"
+    default = "24"
     description = "Default RAM in GB for Ampere A1 instances in OCI Free Tier"
     type    = string
 }
 
 variable "ampere_a1_cpu_core_count" {
-    default = "2"
+    default = "4"
     description = "Default core count for Ampere A1 instances in OCI Free Tier"
     type    = string
 }
