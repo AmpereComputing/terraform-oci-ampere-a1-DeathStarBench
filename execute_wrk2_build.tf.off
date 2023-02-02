@@ -18,7 +18,7 @@ resource "null_resource" "build_wrk2" {
   provisioner "remote-exec" {
     inline = [
       "source build_lua_wrk2.sh",
-      "DeathStarBench/socialNetwork/wrk2/wrk2 --help"
+      "LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib DeathStarBench/socialNetwork/wrk2/wrk2 --help"
     ]
   }
 }

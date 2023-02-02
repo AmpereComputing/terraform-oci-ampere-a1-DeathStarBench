@@ -25,7 +25,7 @@ resource "oci_core_instance" "ampere_a1" {
   metadata = {
     ssh_authorized_keys = tls_private_key.oci.public_key_openssh
 #    user_data = "${base64encode(data.template_file.cloud_config.rendered)}"
-    user_data = "${base64encode(templatefile("${path.module}/templates/cloud-init.yaml.tpl",{ tf_ssh_privkey = tls_private_key.oci.private_key_pem, tf_ssh_pubkey = tls_private_key.oci.public_key_openssh, tf_random_id = random_uuid.random_id.result, dsb_repo = var.deathstarbench_repository_url, }))}"
+    user_data = "${base64encode(templatefile("${path.module}/templates/cloud-init.${count.index}.yaml.tpl",{ tf_ssh_privkey = tls_private_key.oci.private_key_pem, tf_ssh_pubkey = tls_private_key.oci.public_key_openssh, tf_random_id = random_uuid.random_id.result, dsb_repo = var.deathstarbench_repository_url, }))}"
 
     
   }
