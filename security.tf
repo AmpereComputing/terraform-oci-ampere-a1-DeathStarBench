@@ -43,6 +43,16 @@ resource "oci_core_security_list" "ampere_security_list" {
     source   = "0.0.0.0/0"
 
     tcp_options {
+      max = "32080"
+      min = "32080"
+    }
+  }
+
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
       max = "80"
       min = "80"
     }

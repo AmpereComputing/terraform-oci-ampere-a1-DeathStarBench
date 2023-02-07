@@ -79,8 +79,11 @@ runcmd:
   - sleep 5
 # DSB
   - cd /home/ubuntu && git clone ${dsb_repo} 
-# - "sed -i '/  name: nginx-thrift/a \ \ type: LoadBalancer' /home/ubuntu/DeathStarBench/socialNetwork/helm-chart/socialnetwork/charts/nginx-thrift/values.yaml"
-  - "sed -i '/  name: nginx-thrift/a \\ \\ type: LoadBalancer' /home/ubuntu/DeathStarBench/socialNetwork/helm-chart/socialnetwork/charts/nginx-thrift/values.yaml"
+# Enable LoadBalancer
+# - "sed -i '/  name: nginx-thrift/a \\ \\ type: LoadBalancer' /home/ubuntu/DeathStarBench/socialNetwork/helm-chart/socialnetwork/charts/nginx-thrift/values.yaml"
+  - "sed -i '0,/name: nginx-thrift/a type: NodePort' /home/ubuntu/DeathStarBench/socialNetwork/helm-chart/socialnetwork/charts/nginx-thrift/values.yaml"
+  - "sed -i '/    targetPort: 8080/a \\ \\ \\ \\ nodePort: 32080' /home/ubuntu/DeathStarBench/socialNetwork/helm-chart/socialnetwork/charts/nginx-thrift/values.yaml"
+  - "sed -i '/    targetPort: {{ .targetPort }}/a \\ \\ \\ \\ nodePort: {{ .nodePort }}' /home/ubuntu/DeathStarBench/socialNetwork/helm-chart/socialnetwork/templates/_baseService.tpl"
   - chown -R ubuntu:ubuntu /home/ubuntu
 # Needed for building containers
 # - rm -rf /home/ubuntu/DeathStarBench/socialNetwork/wrk2/deps/luajit
@@ -91,11 +94,30 @@ runcmd:
   - cd /home/ubuntu/DeathStarBench/socialNetwork/helm-chart/ && chmod +x create delete describe install installdefault logs watch
   - sudo -u ubuntu /home/ubuntu/DeathStarBench/socialNetwork/helm-chart/create
   - sudo -u ubuntu sed -i 's/10m0s/25m0s/g' /home/ubuntu/DeathStarBench/socialNetwork/helm-chart/install
+  - sudo -u ubuntu cp /home/ubuntu/install2 /home/ubuntu/DeathStarBench/socialNetwork/helm-chart/install2
   - sudo -u ubuntu /home/ubuntu/DeathStarBench/socialNetwork/helm-chart/install
 # - sleep 12m
 # - sudo -u ubuntu python3 /home/ubuntu/DeathStarBench/socialNetwork/scripts/init_social_graph.py --graph=socfb-Reed98 --ip=10.0.10.236 --port=32080
 
 write_files:
+  - content: |
+      #!/usr/bin/env bash
+      helm install social-network ./socialnetwork/ \
+      -n social-network \
+      --set \
+      global.mongodb.sharding.enabled=true,\
+      global.mongodb.standalone.enabled=false,\
+      global.redis.cluster.enabled=true,\
+      global.redis.standalone.enabled=false,\
+      global.memcached.cluster.enabled=false,\
+      global.memcached.standalone.enabled=true,\
+      nginx-thrift.replicas=1,\
+      mongodb-sharded.shards=1,\
+      mongodb-sharded.shardsvr.dataNode.replicaCount=1,\
+      mcrouter.memcached.replicaCount=1,\
+      global.replicas=1 \
+      --timeout 25m0s &
+    path: /home/ubuntu/install2
   - content: |
       file=io.open("path.txt","w")
       io.output(file)
