@@ -50,11 +50,14 @@ system_info:
     groups: [docker]
 
 runcmd:
+ - mkdir /home/ubuntu/www
+ - mkdir /home/ubuntu/nginx
  - luarocks install luasocket
  - cd /home/ubuntu && git clone ${dsb_repo}
  - chown -R ubuntu:ubuntu /home/ubuntu
  - sudo -i -H -u ubuntu -D /home/ubuntu /home/ubuntu/build_lua_wrk2_builder.sh
  - LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib /home/ubuntu/DeathStarBench/socialNetwork/wrk2/wrk --help
+ - docker run -p 80:80 -v /home/ubuntu/www:/usr/share/nginx/html -v /home/ubuntu/nginx.conf:/etc/nginx/nginx.conf nginx
 
 write_files:
   - content: |
@@ -71,6 +74,8 @@ write_files:
       #!/usr/bin/env bash
       cat << EOF > /home/ubuntu/build_lua_wrk2.sh
       #!/usr/bin/env bash
+      set -x
+      exec &>> $HOME/build_lua_wrk2.log
       #sudo luarocks install luasocket
       lua luapaths.lua
       export LUA_PATH=$(cat path.txt)
