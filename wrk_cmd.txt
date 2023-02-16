@@ -1,0 +1,3 @@
+     #"cd /home/ubuntu/DeathStarBench/socialNetwork/wrk2",
+     #"./wrk -t <num-threads> -c <num-conns> -d <duration> -L -s ./scripts/social-network/compose-post.lua http://localhost:8080/wrk2-api/post/compose -R <reqs-per-sec>"
+     #"./wrk -t ${var.wrk_number_of_threads} -c ${var.wrk_number_of_conns} -d ${var.wrk_duration} -L -s ./scripts/social-network/compose-post.lua http://${oci_core_instance.ampere_a1.0.private_ip}:32080/wrk2-api/post/compose -R ${var.wrk_requests_per_second}"

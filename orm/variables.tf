@@ -3,16 +3,16 @@ variable "tenancy_ocid" {
     description = "OCI Tenancy ID for Free-Tier Account"
 }
 
-variable "user_ocid" {
-    description = "OCI User ID for Free-Tier Account"
-}
-variable "fingerprint" {
-    description = "OCI Fingerprint ID for Free-Tier Account"
-}
+#variable "user_ocid" {
+#    description = "OCI User ID for Free-Tier Account"
+#}
+#variable "fingerprint" {
+#    description = "OCI Fingerprint ID for Free-Tier Account"
+#}
 
-variable "private_key_path" {
-    description = "Local path to the OCI private key file"
-}
+#variable "private_key_path" {
+#    description = "Local path to the OCI private key file"
+#}
 
 # Network Configuration Variables
 
@@ -79,6 +79,6 @@ variable "wrk_duration" {
 variable "wrk_requests_per_second" {
 #   default = "5000"
     default = "50"
-    description = "Number of requests per second to use when running wrk"
+    description = "duration to use when running wrk"
     type    = string
 }
