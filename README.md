@@ -1,12 +1,12 @@
 ![Ampere Computing](https://avatars2.githubusercontent.com/u/34519842?s=400&u=1d29afaac44f477cbb0226139ec83f73faefe154&v=4)
 
-# terraform-oci-ampere-a1-dsb
+# terraform-oci-ampere-a1-DeathStarBench
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Description
 
-Terraform code to launch a Ampere A1 Shape on Oracle Cloud Infrastructure (OCI) Free-Tier which automatically builds and deploys DeathStarBench
+Terraform code to launch a Ampere A1 Shape on Oracle Cloud Infrastructure (OCI) Free-Tier which automatically deploys and runs DeathStarBench
 
 ## Requirements
 
@@ -18,75 +18,6 @@ Terraform code to launch a Ampere A1 Shape on Oracle Cloud Infrastructure (OCI) 
 ## What exactly is Terraform doing
 
 The goal of this code is to supply the minimal ammount of information to quickly have working Ampere A1 instances on OCI ["Always Free"](https://www.oracle.com/cloud/free/#always-free).
-This instance is confured with metadata to install required software, configure itself, and build OpenStack kolla images.
-To keep things simple, The root compartment will be used (compartment id and tenancy id are the same) when launching the instance.  
-
-Addtional tasks performed by this code:
-
-* Dynamically creating sshkeys to use when logging into the instance.
-* Dynamically getting region, availability zone and image id..
-* Creating necessary core networking configurations for the tenancy
-* Rendering metadata to pass into the Ampere A1 instance to build OpenStack Kolla Images.
-* Launch Ampere A1 instance with metadata and ssh keys.
-* Output IP information to connect to the instance.
-
-
-To get started clone this repository from GitHub locally.
-
-## Configuration with terraform.tfvars
-
-The easiest way to configure is to use a terraform.tfvars in the project directory.  
-Please note that Compartment OCID are the same as Tenancy OCID for Root Compartment.
-The following is an example of what terraform.tfvars should look like:
-
-```
-tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopq"
-user_ocid = "ocid1.user.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz0987654321zyxwvustqrponmlkj"
-fingerprint = "a1:01:b2:02:c3:03:e4:04:10:11:12:13:14:15:16:17"
-```
-
-### Using as a Module
-
-This can also be used as a terraform module.   The following is example code for module usage:
-
-```
-variable "tenancy_ocid" {}
-variable "user_ocid" {}
-variable "fingerprint" {}
-variable "private_key_path" {}
-
-module "oci-ampere-openstack-kolla-image-builder" {
-  source                        = "github.com/amperecomputing/terraform-oci-ampere-openstack-kolla-image-builder"
-  tenancy_ocid                  = var.tenancy_ocid
-  user_ocid                     = var.user_ocid
-  fingerprint                   = var.fingerprint
-  private_key_path              = var.private_key_path
-# Optional
-# oci_vcn_cidr_block            = "10.2.0.0/16"
-# oci_vcn_cidr_subnet           = "10.2.1.0/24"
-# instance_prefix               = "openstack-kolla-image-builder"
-# oci_vm_count                  = "1"
-# ampere_a1_vm_memory           = "24"
-# ampere_a1_cpu_core_count      = "4"
-# openstack_kolla_base_os_image = "ubuntu"
-}
-
-output "oci_ampere_a1_private_ips" {
-  value     = module.oci-ampere-a1.AmpereA1_PrivateIPs
-}
-output "oci_ampere_a1_public_ips" {
-  value = module.oci-ampere-a1.AmpereA1_PublicIPs
-}
-```
-
-### Running Terraform
-
-```
-terraform init && terraform plan && terraform apply -auto-approve
-```
-
-
-<script id="asciicast-432487" src="https://asciinema.org/a/432487.js" async data-autoplay="true" data-size="small" data-speed="2"></script>
 
 
 ## References
