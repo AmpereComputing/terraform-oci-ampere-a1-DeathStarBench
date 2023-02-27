@@ -57,7 +57,7 @@ runcmd:
  - chown -R ubuntu:ubuntu /home/ubuntu
  - sudo -i -H -u ubuntu -D /home/ubuntu /home/ubuntu/build_lua_wrk2_builder.sh
  - LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib /home/ubuntu/DeathStarBench/socialNetwork/wrk2/wrk --help
- - docker run -p 80:80 -v /home/ubuntu/www:/usr/share/nginx/html -v /home/ubuntu/nginx.conf:/etc/nginx/nginx.conf nginx
+ - docker run -p 80:80 -v /home/ubuntu/www:/usr/share/nginx/html nginx
 
 write_files:
   - content: |
