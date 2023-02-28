@@ -1,19 +1,31 @@
 ---
-name: "release"
-
-on:
-  push:
-    branches:
-      - "main"
 
 jobs:
-  create_zip:
+  release:
     runs-on: ubuntu-latest
     steps:
-      - name: 'Checkout repo'
-        uses: actions/checkout@v2
-      - name: 'Make (and upload) ZIP file(s)'
-        uses: oracle-devrel/action-release-zip-maker@v0.5
-        id: zip_maker
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create Draft Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: latest
+        release_name: developement
+        draft: true
+        prerelease: false
+
+    - uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./terraform-oci-ampere-a1-DeathStarBench.zip
+        asset_name: terraform-oci-ampere-a1-DeathStarBench.zip
+        asset_content_type: application/zip
+
+    - uses: eregon/publish-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        release_id: ${{ steps.create_release.outputs.id }}
