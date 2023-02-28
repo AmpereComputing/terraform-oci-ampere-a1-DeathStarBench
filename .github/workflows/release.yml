@@ -1,4 +1,9 @@
 ---
+name: Release Pipeline
+on:
+  push:
+    branches:
+      - "master"
 
 jobs:
   release:
