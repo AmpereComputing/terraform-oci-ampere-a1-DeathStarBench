@@ -15,6 +15,9 @@
         "src": "LICENSE"
       },
       {
+        "src": "templates"
+      },
+      {
         "src": "schema.yaml",
         "dst": "schema.yaml"
       },
