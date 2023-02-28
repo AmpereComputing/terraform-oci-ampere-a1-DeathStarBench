@@ -4,9 +4,21 @@ name: "release"
 on:
   push:
     branches:
-      - "master"
+      - "main"
 
 jobs:
+  create_zip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout repo'
+        uses: actions/checkout@v2
+      - name: 'Make (and upload) ZIP file(s)'
+        uses: oracle-devrel/action-release-zip-maker@v0.5
+        id: zip_maker
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+
   latest-release:
     name:  "Latest Release"
     runs-on: "ubuntu-latest"
@@ -24,4 +36,4 @@ jobs:
           title: "Latest Build"
           files: |
             LICENSE.txt
-            *.*
+            *.zip
