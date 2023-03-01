@@ -1,8 +1,5 @@
 name: Release ZIP file packaging
-
-on:
-  release:
-    types: [published]
+on: [release]
 
 jobs:
   create_zip:
