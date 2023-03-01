@@ -45,3 +45,4 @@ The back end cluster deployment may never finish coming up.  Essentially there a
 * [scross01/autonomous_linux_7.7.tf](https://gist.github.com/scross01/bcd21c12b15787f3ae9d51d0d9b2df06)
 * [Oracle Cloud Always Free](https://www.oracle.com/cloud/free/#always-free)
 * [OCI Terraform Level 200](https://www.oracle.com/a/ocom/docs/terraform-200.pdf)
+* [OCI Stacks](https://docs.oracle.com/en/cloud/paas/cloud-stack-manager/csmug/oracle-cloud-stack-manager.html#GUID-CE12A1EA-7AB9-4ED2-B63F-553EA9C2CC1D)
