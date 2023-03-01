@@ -16,6 +16,7 @@
       },
       {
         "src": "templates"
+        "recursive": true
       },
       {
         "src": "schema.yaml",
@@ -28,7 +29,15 @@
       {
         "src": "orm/provider.tf",
         "dst": "provider.tf"
+      },
+      {
+        "src": "orm",
+        "recursive": true
       }        
     ]
+  },
+  {
+    "action": "upload_file",
+    "file_name": "latest.zip"
   }
 ]
