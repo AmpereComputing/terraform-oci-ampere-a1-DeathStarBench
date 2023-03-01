@@ -15,7 +15,7 @@
         "src": "LICENSE"
       },
       {
-        "src": "templates"
+        "src": "templates",
         "recursive": true
       },
       {
