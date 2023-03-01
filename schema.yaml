@@ -1,7 +1,7 @@
 title: "DeathStarBench on Ampere A1 VM Instances on OCI"
 stackDescription: "DeathStarBench Ampere A1 VM Instances on OCI"
 schemaVersion: 0.0.1
-version: "20230216"
+version: "20230301"
 locale: "en"
 
 variableGroups:
@@ -108,7 +108,7 @@ variables:
     default: 2
     title: "OCI Free Tier Ampere A1 Instance Count"
     description: "Choose number of OCPUs for Flex Shape."
-    visible: true
+    visible: false
 
   ampere_a1_vm_memory:
     type: number
@@ -119,7 +119,7 @@ variables:
     default: 8
     title: "Ampere A1 Instance Memory (GB)"
     description: "Choose number GB for Ampere A1 Instance Memory."
-    visible: true
+    visible: false
 
   ampere_a1_cpu_core_count:
     type: number
@@ -130,7 +130,7 @@ variables:
     default: 4
     title: "Ampere A1 VM CPU Core Count"
     description: "Choose number of Ampere A1 cores."
-    visible: true
+    visible: false
 
   deathstarbench_repository_url:
     type: string
@@ -193,19 +193,31 @@ outputs:
     type: copyableString
     visible: true
 
-  AmpereA1_PrivateIPs:
+  AmpereA1_DeathStarBench_PrivateIPs:
     title: "Ampere A1 Private IPs"
     displayText: "Ampere A1 Private IPs"
     type: string
     visible: true
 
-  AmpereA1_PublicIPs:
+  AmpereA1_DeathStarBench_PublicIPs:
     title: "Ampere A1 Public IPs"
     displayText: "Ampere A1 Public IPs"
     type: string
     visible: true
 
-  AmpereA1_BootVolumeIDs:
+  AmpereA1_DeathStarBench_URL:
+    title: "Ampere A1 DeathStarBench URL"
+    displayText: "Ampere A1 DeathStarBench URL"
+    type: string
+    visible: true
+
+  AmpereA1_DeathStarBench_RESULTS_URL:
+    title: "Ampere A1 DeathStarBench RESULTS URL"
+    displayText: "Ampere A1 DeathStarBench RESULTS ERL"
+    type: string
+    visible: true
+
+  AmpereA1_DeathStarBench_BootVolumeIDs:
     title: "Ampere A1 Boot Volume IDs"
     displayText: "Ampere A1 Boot Volume IDs"
     type: string
