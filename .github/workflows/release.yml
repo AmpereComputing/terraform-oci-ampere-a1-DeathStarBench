@@ -31,7 +31,8 @@ jobs:
       - name: 'Checkout repo'
         uses: actions/checkout@v2
       - name: 'Make (and upload) ZIP file(s)'
-        uses: oracle-devrel/action-release-zip-maker@v0.5
+#       uses: oracle-devrel/action-release-zip-maker@v0.5
+        uses: oracle-devrel/action-release-zip-maker@latest
         id: zip_maker
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
