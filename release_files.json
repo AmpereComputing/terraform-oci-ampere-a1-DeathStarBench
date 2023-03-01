@@ -30,9 +30,5 @@
         "dst": "provider.tf"
       }        
     ]
-  },
-  {
-    "action": "upload_file",
-    "file_name": "latest.zip"
   }
 ]
