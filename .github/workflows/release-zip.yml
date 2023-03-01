@@ -2,7 +2,7 @@ name: Release ZIP file packaging
 
 on:
   release:
-    types: [published]
+#   types: [published]
 
 jobs:
   create_zip:
