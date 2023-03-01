@@ -75,7 +75,6 @@ variables:
     required: true
     title: "Private SSH Key path"
     description: "Path where your private  SSH Key is stored."
-    required: false
 
   oci_vcn_cidr_block:
     type: string
