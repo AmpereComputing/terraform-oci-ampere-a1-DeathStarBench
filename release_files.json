@@ -1,7 +1,7 @@
 [
   {
     "action": "create_zip",
-    "file_name": "oci-ampere-a1-DeathStarBench-latest.zip",
+    "file_name": "latest.zip",
     "files": [
       {
         "src_pattern": "*.tf",
@@ -33,6 +33,6 @@
   },
   {
     "action": "upload_file",
-    "file_name": "oci-ampere-a1-DeathStarBench-latest.zip"
+    "file_name": "latest.zip"
   }
 ]
