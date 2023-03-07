@@ -55,7 +55,7 @@ variable "ampere_a1_cpu_core_count" {
 }
 variable deathstarbench_repository_url {
 #   default = "https://github.com/delimitrou/DeathStarBench.git"
-    default = "-b arm64-port https://github.com/AmpereComputing/deathstarbench-ah.git"
+    default = "-b arm64-port https://github.com/AmpereComputing/deathstarbench-ah.git DeathStarBench"
     type    = string
     description = "DeathStarBench repository url"
 }
