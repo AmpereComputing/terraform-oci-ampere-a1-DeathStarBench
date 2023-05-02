@@ -1,7 +1,7 @@
 resource "oci_core_instance" "ampere_a1" {
   count               = var.oci_vm_count
   availability_domain = data.oci_identity_availability_domains.ads.availability_domains.0.name
-  compartment_id      = var.tenancy_ocid
+  compartment_id      = var.compartment_ocid
   display_name        = "DeathStarBench"
   shape               = "VM.Standard.A1.Flex"
 

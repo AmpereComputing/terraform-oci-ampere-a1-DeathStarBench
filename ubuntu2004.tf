@@ -2,8 +2,7 @@
 # filter to specific display name pattern to include the aarch64 images
 
 data "oci_core_images" "ubuntu-20_04-aarch64" {
-  compartment_id = var.tenancy_ocid
-
+  compartment_id = var.compartment_ocid
   operating_system         = "Canonical Ubuntu"
   operating_system_version = "20.04"
 

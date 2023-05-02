@@ -13,6 +13,10 @@ variable "fingerprint" {
 variable "private_key_path" {
     description = "Local path to the OCI private key file"
 }
+variable "compartment_ocid" {
+    description = "OCI Compartment ID"
+}
+
 
 # Network Configuration Variables
 
@@ -44,12 +48,12 @@ variable "oci_vm_count" {
   default = 2
 }
 variable "ampere_a1_vm_memory" {
-    default = "12"
+    default = "32"
     description = "Default RAM in GB for Ampere A1 instances in OCI Free Tier"
     type    = string
 }
 variable "ampere_a1_cpu_core_count" {
-    default = "2"
+    default = "8"
     description = "Default core count for Ampere A1 instances in OCI Free Tier"
     type    = string
 }

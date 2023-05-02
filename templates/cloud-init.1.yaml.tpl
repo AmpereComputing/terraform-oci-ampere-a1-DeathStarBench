@@ -87,6 +87,7 @@ write_files:
       rm -rf luajit
       git clone https://luajit.org/git/luajit.git
       cd luajit
+      git checkout v2.1.0-beta3
       make
       sudo make install
       sudo ln -sf luajit-2.1.0-beta3 /usr/local/bin/luajit

@@ -1,7 +1,7 @@
 # Get a list of Availability Domains
 
 data "oci_identity_availability_domains" "ads" {
-  compartment_id = var.tenancy_ocid
+  compartment_id = var.compartment_ocid
 }
 
 # Output Availability Domain Results
