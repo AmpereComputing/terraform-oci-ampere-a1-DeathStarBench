@@ -53,7 +53,12 @@ variable "ampere_a1_vm_memory" {
     type    = string
 }
 variable "ampere_a1_cpu_core_count" {
-    default = "8"
+    # Originally this was attemted using 2 cores and 12g of on FreeTier
+    # that will deploy not just successfully every time. A value of 8 appears to work consistently with a deploy time of around 10-15 minutes.
+    # The default value will be the least to ammount of cores to deploy consistenly as a proof of concept.
+    #default = "8"
+    # The default value will be the least to ammount of cores to deploy consistenly as a proof of concept.
+    default = "4"
     description = "Default core count for Ampere A1 instances in OCI Free Tier"
     type    = string
 }
@@ -64,14 +69,16 @@ variable deathstarbench_repository_url {
     description = "DeathStarBench repository url"
 }
 variable "wrk_number_of_threads" {
-#   default = "10"
-    default = "2"
+    default = "10"
+# Minimal Used to get functional on FreeTier
+#   default = "2"
     description = "Number of Threads to use when running wrk"
     type    = string
 }
 variable "wrk_number_of_conns" {
-#   default = "1000"
-    default = "100"
+    default = "1000"
+# Minimal Used to get functional on FreeTier
+#   default = "100"
     description = "Number of connections to use when running wrk"
     type    = string
 }
@@ -81,8 +88,9 @@ variable "wrk_duration" {
     type    = string
 }
 variable "wrk_requests_per_second" {
-#   default = "5000"
-    default = "50"
+    default = "5000"
+# Minimal Used to get functional on FreeTier
+#   default = "50"
     description = "Number of requests per second to use when running wrk"
     type    = string
 }

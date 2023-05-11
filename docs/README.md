@@ -16,14 +16,19 @@ Terraform code to launch Ampere A1 Shapes on Oracle Cloud Infrastructure (OCI) w
  * [Oracle OCI "Always Free" Account](https://www.oracle.com/cloud/free/#always-free)
 
 
+## What exactly is Terraform doing
+
+The goal of this code is to supply the minimal ammount of information to quickly have a running DeathStarBench deployment consisting of the backend cluster, and a load generating instance running on Ampere A1 shapes within OCI ["Always Free"](https://www.oracle.com/cloud/free/#always-free).  Performance is not the focus of this deployment.   Currently the instances have two cores and twelve gig of RAM each.
+Deployment can take up to an hour.
 
 ## Automation Walkthrough
 
 The automation falls into two steps.   First being the metadata that is passed into the host and executed during the creation of the instance, the second is executed by connecting over ssh to each instance and passing in scripts which have data within them that was rendered from output during the creation of the instance.  Scripts are also executed.
 
-<!-- BEGIN_TF_DOCS -->
 
-<!-- END_TF_DOCS -->
+## Potential Issues
+
+The back end cluster deployment may never finish coming up.  Essentially there are three sidecar type containers that run once during the deployment.  In some cases the cluster error this is likely due to the network load during the pulling and starting of all the required container images on an instance with constrained resources.
 
 
 ## References
