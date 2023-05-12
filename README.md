@@ -13,7 +13,7 @@ Terraform code to launch Ampere A1 Shapes on Oracle Cloud Infrastructure (OCI) w
 ## Requirements
 
  * [Terraform](https://www.terraform.io/downloads.html)
- * [Oracle OCI "Always Free" Account](https://www.oracle.com/cloud/free/#always-free)
+ * [Oracle OCI Account](https://www.oracle.com/cloud)
 
 
 
