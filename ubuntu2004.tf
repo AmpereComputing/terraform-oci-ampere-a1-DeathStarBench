@@ -14,11 +14,13 @@ data "oci_core_images" "ubuntu-20_04-aarch64" {
   }
 }
 
+# Output the Ubuntu 20.04 image name
 output "Ubuntu-20_04-aarch64-latest_name" {
   value     = data.oci_core_images.ubuntu-20_04-aarch64.images.0.display_name
   sensitive = false
 }
 
+# Output the Ubuntu 20.04 image OCID
 output "Ubuntu-20_04-aarch64-latest_ocid" {
   value     = data.oci_core_images.ubuntu-20_04-aarch64.images.0.id
   sensitive = false
