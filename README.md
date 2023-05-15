@@ -22,9 +22,6 @@ Terraform code to launch Ampere A1 Shapes on Oracle Cloud Infrastructure (OCI) w
 The automation falls into two steps.   First being the metadata that is passed into the host and executed during the creation of the instance, the second is executed by connecting over ssh to each instance and passing in scripts which have data within them that was rendered from output during the creation of the instance.  Scripts are also executed.
 
 <!-- BEGIN_TF_DOCS -->
-<<<<<<< HEAD
-
-=======
 ## Providers
 
 | Name | Version |
@@ -89,17 +86,16 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_AmpereA1_DeathStarBench_BootVolumeIDs"></a> [AmpereA1\_DeathStarBench\_BootVolumeIDs](#output\_AmpereA1\_DeathStarBench\_BootVolumeIDs) | Output the boot volume IDs of the instance |
-| <a name="output_AmpereA1_DeathStarBench_PrivateIPs"></a> [AmpereA1\_DeathStarBench\_PrivateIPs](#output\_AmpereA1\_DeathStarBench\_PrivateIPs) | n/a |
-| <a name="output_AmpereA1_DeathStarBench_PublicIPs"></a> [AmpereA1\_DeathStarBench\_PublicIPs](#output\_AmpereA1\_DeathStarBench\_PublicIPs) | n/a |
-| <a name="output_AmpereA1_DeathStarBench_RESULTS_URL"></a> [AmpereA1\_DeathStarBench\_RESULTS\_URL](#output\_AmpereA1\_DeathStarBench\_RESULTS\_URL) | n/a |
-| <a name="output_AmpereA1_DeathStarBench_URL"></a> [AmpereA1\_DeathStarBench\_URL](#output\_AmpereA1\_DeathStarBench\_URL) | n/a |
+| <a name="output_AmpereA1_DeathStarBench_PrivateIPs"></a> [AmpereA1\_DeathStarBench\_PrivateIPs](#output\_AmpereA1\_DeathStarBench\_PrivateIPs) | Output the private IP(s) of the instance(s) |
+| <a name="output_AmpereA1_DeathStarBench_PublicIPs"></a> [AmpereA1\_DeathStarBench\_PublicIPs](#output\_AmpereA1\_DeathStarBench\_PublicIPs) | Output the public IP(s) of the instance(s) |
+| <a name="output_AmpereA1_DeathStarBench_RESULTS_URL"></a> [AmpereA1\_DeathStarBench\_RESULTS\_URL](#output\_AmpereA1\_DeathStarBench\_RESULTS\_URL) | Output the URL of the WRK2 Output/Results |
+| <a name="output_AmpereA1_DeathStarBench_URL"></a> [AmpereA1\_DeathStarBench\_URL](#output\_AmpereA1\_DeathStarBench\_URL) | Output the url of the DeathStarBench application |
 | <a name="output_OCI_Availability_Domains"></a> [OCI\_Availability\_Domains](#output\_OCI\_Availability\_Domains) | Output Availability Domain Results |
 | <a name="output_Ubuntu-20_04-aarch64-latest_name"></a> [Ubuntu-20\_04-aarch64-latest\_name](#output\_Ubuntu-20\_04-aarch64-latest\_name) | n/a |
 | <a name="output_Ubuntu-20_04-aarch64-latest_ocid"></a> [Ubuntu-20\_04-aarch64-latest\_ocid](#output\_Ubuntu-20\_04-aarch64-latest\_ocid) | n/a |
 | <a name="output_oci_home_region"></a> [oci\_home\_region](#output\_oci\_home\_region) | n/a |
 | <a name="output_oci_ssh_private_key"></a> [oci\_ssh\_private\_key](#output\_oci\_ssh\_private\_key) | n/a |
 | <a name="output_oci_ssh_public_key"></a> [oci\_ssh\_public\_key](#output\_oci\_ssh\_public\_key) | n/a |
->>>>>>> 706fa1b7c546e99cf60ac0fbf26c2ecc3659f728
 <!-- END_TF_DOCS -->
 
 
