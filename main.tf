@@ -16,10 +16,12 @@ resource "local_file" "oci-ssh-pubkey" {
     file_permission = "0644"
 }
 
+# Output OCI SSH Public Key
 output "oci_ssh_public_key" {
   value = tls_private_key.oci.public_key_openssh
 }
 
+# Output OCI SSH Private Key
 output "oci_ssh_private_key" {
   value = tls_private_key.oci.private_key_pem
   sensitive = true
