@@ -33,10 +33,6 @@ The automation falls into two steps.   First being the metadata that is passed i
 | <a name="provider_template"></a> [template](#provider\_template) | n/a |
 | <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
 
-## Modules
-
-No modules.
-
 ## Resources
 
 | Name | Type |
@@ -94,8 +90,8 @@ No modules.
 | <a name="output_Ubuntu-20_04-aarch64-latest_name"></a> [Ubuntu-20\_04-aarch64-latest\_name](#output\_Ubuntu-20\_04-aarch64-latest\_name) | Output the Ubuntu 20.04 image name |
 | <a name="output_Ubuntu-20_04-aarch64-latest_ocid"></a> [Ubuntu-20\_04-aarch64-latest\_ocid](#output\_Ubuntu-20\_04-aarch64-latest\_ocid) | Output the Ubuntu 20.04 image OCID |
 | <a name="output_oci_home_region"></a> [oci\_home\_region](#output\_oci\_home\_region) | Output the OCI Home Region |
-| <a name="output_oci_ssh_private_key"></a> [oci\_ssh\_private\_key](#output\_oci\_ssh\_private\_key) | n/a |
-| <a name="output_oci_ssh_public_key"></a> [oci\_ssh\_public\_key](#output\_oci\_ssh\_public\_key) | n/a |
+| <a name="output_oci_ssh_private_key"></a> [oci\_ssh\_private\_key](#output\_oci\_ssh\_private\_key) | Output OCI SSH Private Key |
+| <a name="output_oci_ssh_public_key"></a> [oci\_ssh\_public\_key](#output\_oci\_ssh\_public\_key) | Output OCI SSH Public Key |
 <!-- END_TF_DOCS -->
 
 
