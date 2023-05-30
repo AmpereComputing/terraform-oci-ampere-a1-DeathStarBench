@@ -24,8 +24,8 @@ For more information regarding Ampere platform and DeathStarBench results please
 
 ## Automation Walkthrough
 
-The automation falls into two steps.   First being the metadata that is passed into the host and executed during the creation of the instance, the second is executed by connecting over ssh to each instance and passing in scripts which have data within them that was rendered from output during the creation of the instance.  Scripts are also executed.
-
+This automation is essentially a spealized fork of the [terraform-oci-ampere-a1](https://github.com/amperecomputing/terraform-oci-ampere-a1] module adding additional configuration steps.
+Thus this will configure all the networking and security settings for instances being deployed.  Essentially the remaining automation falls into two steps. The first being to setup all the scaffolding and deploy two virtual machines passing different metadata into each host. The first host will be deployed as the DeathStarBench social media application.  The deployment includes a single node Kubernetes cluster with Calico for Kubernetes network.  Once the Kubernetes infrastructure is running, Helm charts are used to deploy aarch64 container images from a public container repository.  The second virtal machine instance will pull the DeathStarBench source and build the client worker to generate load against the deployed DeathStarBench social media application. An Ngnix container is deployed to allow the results of the load generation to be viewed via a simple HTML page.   Additionally while the systems are executing thier metadata, scripts are being rendered with the dynamic external IP information in order to faciliate connectivity between the DeathStarBench backend and Wrk2 client on the Second virtual machine instance, and the populating scripts which load a default dataset into the DeathStarBench Social Media applicaiton on the first virtual machine instance.
 
 ## Configuration with terraform.tfvars
 
