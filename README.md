@@ -13,6 +13,7 @@ Terraform code to launch Ampere A1 Shapes on Oracle Cloud Infrastructure (OCI) w
 ## What is DeathStarBench?
 
 DeathStarBench is an open-source benchmark suite for cloud microservices. DeathStarBench includes five end-to-end services, four for cloud systems, and one for cloud-edge systems running on drone swarms.
+For the purposes of this automation we will be using the DeathStarBench "Social Media" application, which deploys a "Twitter" like social media web service utilizting containers.
 For more information regarding Ampere platforms and DeathStarBench results please take a look at the following:
 
 * [Ampere DeathStarBench workload Brief](https://amperecomputing.com/en/briefs/dsb-sn-brief)
