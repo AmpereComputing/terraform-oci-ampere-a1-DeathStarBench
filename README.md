@@ -10,7 +10,7 @@ Terraform code to launch Ampere A1 Shapes on Oracle Cloud Infrastructure (OCI) w
 
 [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench/releases/download/latest/oci-ampere-a1-DeathStarBench-latest.zip)
 
-For more information regarding Ampere platform and DeathStarBench results please take a look at the following:
+For more information regarding Ampere platforms and DeathStarBench results please take a look at the following:
 
 * [Ampere DeathStarBench workload Brief](https://amperecomputing.com/en/briefs/dsb-sn-brief)
 * [Up to 44% Lower Latency on Ampere than x86 on DeathStarBench](https://www.youtube.com/watch?v=cGNEQRKB4qE)
