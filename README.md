@@ -14,7 +14,9 @@ For more information regarding Ampere platforms and DeathStarBench results pleas
 
 * [Ampere DeathStarBench workload Brief](https://amperecomputing.com/en/briefs/dsb-sn-brief)
 * [Up to 44% Lower Latency on Ampere than x86 on DeathStarBench](https://www.youtube.com/watch?v=cGNEQRKB4qE)
+{% include youtube.html id=cGNEQRKB4qE"%}
 * [Up to 73% Higher Performance and Better Consistency than x86 on DeathStarBench](https://www.youtube.com/watch?v=4b8yygZfP3c)
+{% include youtube.html id=4b8yygZfP3c"%}
 
 ## Requirements
 
