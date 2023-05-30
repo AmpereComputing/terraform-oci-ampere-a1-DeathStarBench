@@ -32,7 +32,7 @@ For more information regarding Ampere platforms and DeathStarBench results pleas
 ## Automation Walkthrough
 
 This automation is essentially a spealized fork of the [terraform-oci-ampere-a1](https://github.com/amperecomputing/terraform-oci-ampere-a1) module adding additional configuration steps.
-Thus this will configure all the networking and security settings for instances being deployed.  Essentially the remaining automation falls into two steps. 
+Thus this will configure all the networking and security settings for instances being deployed.  The instances being deployed have four cores and thirty two gigs of RAM. Essentially the remaining automation falls into two phases. 
 
 1. Setup all the scaffolding and deploy two virtual machines passing different metadata into each host. 
    1. The first host will be deployed as the DeathStarBench social media application.
