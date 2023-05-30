@@ -34,7 +34,7 @@ Thus this will configure all the networking and security settings for instances 
    1. The second virtal machine instance will pull the DeathStarBench source and build the client worker to generate load against the deployed DeathStarBench social media application. 
       1. An Ngnix container is also deployed to allow the results of the load generation to be viewed via a simple HTML page.   
 1. While the systems are executing thier metadata, two scripts are being rendered with the dynamic external IP information and copied via SCP to the running instances. 
-   1. This is done in order to faciliate connectivity to the DeathStarBench backend.
+   1. The rendering is done in order to faciliate connectivity to the DeathStarBench backend.
       1. Script ont he first node is used to load a default dataset into the DeathStarBench Social Media applicaiton after waiting for the application to be up and running.
       1. Build the Wrk2 client on the Second virtual machine instance from source, waiting until the DeathStarBench application is up and populated with data before executing the benchmark run.
 
