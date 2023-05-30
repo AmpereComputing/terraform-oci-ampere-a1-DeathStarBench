@@ -21,6 +21,21 @@ Terraform code to launch Ampere A1 Shapes on Oracle Cloud Infrastructure (OCI) w
 
 The automation falls into two steps.   First being the metadata that is passed into the host and executed during the creation of the instance, the second is executed by connecting over ssh to each instance and passing in scripts which have data within them that was rendered from output during the creation of the instance.  Scripts are also executed.
 
+## Configuration with terraform.tfvars
+
+The easiest way to configure is to use a terraform.tfvars in the project directory.  
+Please note that Compartment OCID are the same as Tenancy OCID for Root Compartment.
+The following is an example of what terraform.tfvars should look like:
+
+```
+tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopq"
+user_ocid = "ocid1.user.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz0987654321zyxwvustqrponmlkj"
+fingerprint = "a1:01:b2:02:c3:03:e4:04:10:11:12:13:14:15:16:17"
+private_key_path = "/home/bwayne/.oci/oracleidentitycloudservice_bwayne-08-09-14-59.pem"
+compartment_ocid = "ocid.compartment.oc1.aaaaaabbbbbbbcccccccddddddddd111111222222333333544444455"
+
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Providers
 
