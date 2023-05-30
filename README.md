@@ -33,6 +33,8 @@ user_ocid = "ocid1.user.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz0987654321zyxwvust
 fingerprint = "a1:01:b2:02:c3:03:e4:04:10:11:12:13:14:15:16:17"
 private_key_path = "/home/bwayne/.oci/oracleidentitycloudservice_bwayne-08-09-14-59.pem"
 compartment_ocid = "ocid.compartment.oc1.aaaaaabbbbbbbcccccccddddddddd111111222222333333544444455"
+# For development purposes if needed
+# deathstarbench_repository_url = "-b <YOUR_BRANCH> https://oauth2:<YOURTOKEN>@gitlab.com/<YOUR_FORK>/DeathStarBench.git"
 
 ```
 
