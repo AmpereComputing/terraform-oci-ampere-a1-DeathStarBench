@@ -6,9 +6,15 @@
 
 ## Description
 
-Terraform code to launch Ampere A1 Shapes on Oracle Cloud Infrastructure (OCI) which automatically deploy and runs DeathStarBench
+Terraform code to launch Ampere A1 Shapes on Oracle Cloud Infrastructure (OCI) which automatically deploy and runs [DeathStarBench](https://amperecomputing.com/en/briefs/dsb-sn-brief)
 
 [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench/releases/download/latest/oci-ampere-a1-DeathStarBench-latest.zip)
+
+For more information regarding Ampere platform and DeathStarBench results please take a look at the following:
+
+* [Ampere DeathStarBench workload Brief](https://amperecomputing.com/en/briefs/dsb-sn-brief)
+* [Up to 44% Lower Latency on Ampere than x86 on DeathStarBench](https://www.youtube.com/watch?v=cGNEQRKB4qE)
+* [Up to 73% Higher Performance and Better Consistency than x86 on DeathStarBench](https://www.youtube.com/watch?v=4b8yygZfP3c)
 
 ## Requirements
 
@@ -16,10 +22,10 @@ Terraform code to launch Ampere A1 Shapes on Oracle Cloud Infrastructure (OCI) w
  * [Oracle OCI Account](https://www.oracle.com/cloud)
 
 
-
 ## Automation Walkthrough
 
 The automation falls into two steps.   First being the metadata that is passed into the host and executed during the creation of the instance, the second is executed by connecting over ssh to each instance and passing in scripts which have data within them that was rendered from output during the creation of the instance.  Scripts are also executed.
+
 
 ## Configuration with terraform.tfvars
 
@@ -129,3 +135,8 @@ compartment_ocid = "ocid.compartment.oc1.aaaaaabbbbbbbcccccccddddddddd1111112222
 * [Oracle Cloud Always Free](https://www.oracle.com/cloud/free/#always-free)
 * [OCI Terraform Level 200](https://www.oracle.com/a/ocom/docs/terraform-200.pdf)
 * [OCI Stacks](https://docs.oracle.com/en/cloud/paas/cloud-stack-manager/csmug/oracle-cloud-stack-manager.html#GUID-CE12A1EA-7AB9-4ED2-B63F-553EA9C2CC1D)
+* [An Open-Source Benchmark Suite for Microservices and Thier Hardware-Software Implications for Cloud & Edge Systems](https://www.csl.cornell.edu/~delimitrou/papers/2019.asplos.microservices.pdf)
+* [The Morning Paper: An open-source benchmark suite for microservices and their hardware-software implications for cloud & edge systems](https://blog.acolyer.org/2019/05/13/an-open-source-benchmark-suite-for-microservices-and-their-hardware-software-implications-for-cloud-edge-systems/)
+* [Ampere DeathStarBench workload Brief](https://amperecomputing.com/en/briefs/dsb-sn-brief)
+* [Up to 44% Lower Latency on Ampere than x86 on DeathStarBench](https://www.youtube.com/watch?v=cGNEQRKB4qE)
+* [Up to 73% Higher Performance and Better Consistency than x86 on DeathStarBench](https://www.youtube.com/watch?v=4b8yygZfP3c)
