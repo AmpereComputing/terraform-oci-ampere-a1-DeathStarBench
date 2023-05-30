@@ -24,7 +24,9 @@ The automation falls into two steps.   First being the metadata that is passed i
 ## Configuration with terraform.tfvars
 
 The easiest way to configure is to use a terraform.tfvars in the project directory.  
-Please note that Compartment OCID are the same as Tenancy OCID for Root Compartment.
+Please that Compartment OCID is NOT the same as Tenancy OCID for Root Compartment.
+You will need to supply the appropriate compartment ID.
+
 The following is an example of what terraform.tfvars should look like:
 
 ```
