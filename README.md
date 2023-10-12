@@ -73,7 +73,6 @@ compartment_ocid = "ocid.compartment.oc1.aaaaaabbbbbbbcccccccddddddddd1111112222
 | <a name="provider_null"></a> [null](#provider\_null) | n/a |
 | <a name="provider_oci"></a> [oci](#provider\_oci) | n/a |
 | <a name="provider_random"></a> [random](#provider\_random) | n/a |
-| <a name="provider_template"></a> [template](#provider\_template) | n/a |
 | <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
 
 ## Resources
@@ -96,8 +95,6 @@ compartment_ocid = "ocid.compartment.oc1.aaaaaabbbbbbbcccccccddddddddd1111112222
 | [oci_identity_availability_domains.ads](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_availability_domains) | data source |
 | [oci_identity_regions.regions](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_regions) | data source |
 | [oci_identity_tenancy.tenancy](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_tenancy) | data source |
-| [template_file.dsb_populate](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
-| [template_file.run_wrk](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
 
 ## Inputs
 
