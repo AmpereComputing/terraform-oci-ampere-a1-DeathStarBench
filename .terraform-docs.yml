@@ -1,4 +1,4 @@
-formatter: "" # this is required
+formatter: "markdown"
 
 version: ""
 
@@ -8,17 +8,22 @@ footer-from: ""
 recursive:
   enabled: false
   path: modules
+  include-main: true
 
 sections:
-  hide: 
-    - requirements
-    - modules
+  hide: []
   show: []
 
-  hide-all: false # deprecated in v0.13.0, removed in v0.15.0
-  show-all: true  # deprecated in v0.13.0, removed in v0.15.0
+content: |-
 
-content: ""
+    {{ .Header }}
+    {{ .Inputs }}
+    {{ .Modules }}
+    {{ .Outputs }}
+    {{ .Providers }}
+    {{ .Resources }}
+    {{ .Requirements }}
+    {{ .Footer }}
 
 output:
   file: ""
@@ -26,7 +31,7 @@ output:
   template: |-
     <!-- BEGIN_TF_DOCS -->
     {{ .Content }}
-    <!-- END_TF_DOCS -->    
+    <!-- END_TF_DOCS -->
 
 output-values:
   enabled: false

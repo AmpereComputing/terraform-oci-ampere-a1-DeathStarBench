@@ -1,14 +1,29 @@
 ![Ampere Computing](https://avatars2.githubusercontent.com/u/34519842?s=400&u=1d29afaac44f477cbb0226139ec83f73faefe154&v=4)
 
-# terraform-oci-ampere-a1-DeathStarBench
+# terraform-oci-ampere-a1-DeathStarBench-DeathStarBench
 
+[![Source Code](https://img.shields.io/badge/source-GitHub-blue.svg?style=flat)](https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench)
+![documentation workflow](https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench/actions/workflows/documentation.yml/badge.svg?label=build&style=flat-square&branch=main)
+![release workflow](https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench/actions/workflows/release.yml/badge.svg?label=build&style=flat-square&branch=main)
+[![pages-build-deployment](https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench/actions/workflows/pages/pages-build-deployment)
+![nightly-build](https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench/actions/workflows/nightly.yml/badge.svg?label=build&style=flat-square&branch=main)
+[![Latest version](https://img.shields.io/github/tag/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench.svg?label=release&style=flat&maxAge=3600)](https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench/tags)
+[![GitHub issues](https://img.shields.io/github/issues/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench.svg)](https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench/issues)
+![Github stars](https://badgen.net/github/stars/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench?icon=github&label=stars)
+![Github last-commit](https://img.shields.io/github/last-commit/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench)
+[![GitHub forks](https://img.shields.io/github/forks/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench.svg)](https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench/network)
+![Github forks](https://badgen.net/github/forks/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench?icon=github&label=forks)
+![GitHub License](https://img.shields.io/github/license/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![GitHub deployments](https://img.shields.io/github/deployments/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench/github-pages)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Famperecomputing.github.io/terraform-oci-ampere-a1-DeathStarBench)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Description
 
 Terraform code to launch Ampere A1 Shapes on Oracle Cloud Infrastructure (OCI) which automatically deploy and runs [DeathStarBench](https://amperecomputing.com/en/briefs/dsb-sn-brief)
 
-[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench/releases/download/latest/oci-ampere-a1-DeathStarBench-latest.zip)
+[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/AmpereComputing/terraform-oci-ampere-a1-DeathStarBench-DeathStarBench/releases/download/latest/oci-ampere-a1-DeathStarBench-DeathStarBench-latest.zip)
 
 ## What is DeathStarBench?
 
@@ -65,73 +80,6 @@ compartment_ocid = "ocid.compartment.oc1.aaaaaabbbbbbbcccccccddddddddd1111112222
 ```
 
 <!-- BEGIN_TF_DOCS -->
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_local"></a> [local](#provider\_local) | n/a |
-| <a name="provider_null"></a> [null](#provider\_null) | n/a |
-| <a name="provider_oci"></a> [oci](#provider\_oci) | n/a |
-| <a name="provider_random"></a> [random](#provider\_random) | n/a |
-| <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
-
-## Resources
-
-| Name | Type |
-|------|------|
-| [local_file.oci-ssh-privkey](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
-| [local_file.oci-ssh-pubkey](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
-| [null_resource.execute_wrk](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
-| [null_resource.populate_dsb_backend](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
-| [oci_core_instance.ampere_a1](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_instance) | resource |
-| [oci_core_internet_gateway.ampere_internet_gateway](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_internet_gateway) | resource |
-| [oci_core_route_table.ampere_route_table](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_route_table) | resource |
-| [oci_core_security_list.ampere_security_list](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_security_list) | resource |
-| [oci_core_subnet.ampere_subnet](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_subnet) | resource |
-| [oci_core_virtual_network.ampere_vcn](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_virtual_network) | resource |
-| [random_uuid.random_id](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/uuid) | resource |
-| [tls_private_key.oci](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) | resource |
-| [oci_core_images.ubuntu-20_04-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
-| [oci_identity_availability_domains.ads](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_availability_domains) | data source |
-| [oci_identity_regions.regions](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_regions) | data source |
-| [oci_identity_tenancy.tenancy](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_tenancy) | data source |
-
-## Inputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_ampere_a1_cpu_core_count"></a> [ampere\_a1\_cpu\_core\_count](#input\_ampere\_a1\_cpu\_core\_count) | Default core count for Ampere A1 instances in OCI Free Tier | `string` | `"4"` | no |
-| <a name="input_ampere_a1_vm_memory"></a> [ampere\_a1\_vm\_memory](#input\_ampere\_a1\_vm\_memory) | Default RAM in GB for Ampere A1 instances in OCI Free Tier | `string` | `"32"` | no |
-| <a name="input_compartment_ocid"></a> [compartment\_ocid](#input\_compartment\_ocid) | OCI Compartment ID | `any` | n/a | yes |
-| <a name="input_deathstarbench_repository_url"></a> [deathstarbench\_repository\_url](#input\_deathstarbench\_repository\_url) | DeathStarBench repository url | `string` | `"-b arm64-port https://github.com/AmpereComputing/DeathStarBench.git"` | no |
-| <a name="input_fingerprint"></a> [fingerprint](#input\_fingerprint) | OCI Fingerprint ID for Free-Tier Account | `any` | n/a | yes |
-| <a name="input_instance_prefix"></a> [instance\_prefix](#input\_instance\_prefix) | Name prefix for vm instances | `string` | `"dsb"` | no |
-| <a name="input_oci_vcn_cidr_block"></a> [oci\_vcn\_cidr\_block](#input\_oci\_vcn\_cidr\_block) | CIDR Address Block for OCI Networks | `string` | `"10.1.0.0/16"` | no |
-| <a name="input_oci_vcn_cidr_subnet"></a> [oci\_vcn\_cidr\_subnet](#input\_oci\_vcn\_cidr\_subnet) | CIDR Subnet Address for OCI Networks | `string` | `"10.1.1.0/24"` | no |
-| <a name="input_oci_vm_count"></a> [oci\_vm\_count](#input\_oci\_vm\_count) | OCI Free Tier Ampere A1 is four instances | `number` | `2` | no |
-| <a name="input_private_key_path"></a> [private\_key\_path](#input\_private\_key\_path) | Local path to the OCI private key file | `any` | n/a | yes |
-| <a name="input_tenancy_ocid"></a> [tenancy\_ocid](#input\_tenancy\_ocid) | OCI Tenancy ID for Free-Tier Account | `any` | n/a | yes |
-| <a name="input_user_ocid"></a> [user\_ocid](#input\_user\_ocid) | OCI User ID for Free-Tier Account | `any` | n/a | yes |
-| <a name="input_wrk_duration"></a> [wrk\_duration](#input\_wrk\_duration) | duration to use when running wrk | `string` | `"30s"` | no |
-| <a name="input_wrk_number_of_conns"></a> [wrk\_number\_of\_conns](#input\_wrk\_number\_of\_conns) | Number of connections to use when running wrk | `string` | `"1000"` | no |
-| <a name="input_wrk_number_of_threads"></a> [wrk\_number\_of\_threads](#input\_wrk\_number\_of\_threads) | Number of Threads to use when running wrk | `string` | `"10"` | no |
-| <a name="input_wrk_requests_per_second"></a> [wrk\_requests\_per\_second](#input\_wrk\_requests\_per\_second) | Number of requests per second to use when running wrk | `string` | `"5000"` | no |
-
-## Outputs
-
-| Name | Description |
-|------|-------------|
-| <a name="output_AmpereA1_DeathStarBench_BootVolumeIDs"></a> [AmpereA1\_DeathStarBench\_BootVolumeIDs](#output\_AmpereA1\_DeathStarBench\_BootVolumeIDs) | Output the boot volume IDs of the instance |
-| <a name="output_AmpereA1_DeathStarBench_PrivateIPs"></a> [AmpereA1\_DeathStarBench\_PrivateIPs](#output\_AmpereA1\_DeathStarBench\_PrivateIPs) | Output the private IP(s) of the instance(s) |
-| <a name="output_AmpereA1_DeathStarBench_PublicIPs"></a> [AmpereA1\_DeathStarBench\_PublicIPs](#output\_AmpereA1\_DeathStarBench\_PublicIPs) | Output the public IP(s) of the instance(s) |
-| <a name="output_AmpereA1_DeathStarBench_RESULTS_URL"></a> [AmpereA1\_DeathStarBench\_RESULTS\_URL](#output\_AmpereA1\_DeathStarBench\_RESULTS\_URL) | Output the URL of the WRK2 Output/Results |
-| <a name="output_AmpereA1_DeathStarBench_URL"></a> [AmpereA1\_DeathStarBench\_URL](#output\_AmpereA1\_DeathStarBench\_URL) | Output the url of the DeathStarBench application |
-| <a name="output_OCI_Availability_Domains"></a> [OCI\_Availability\_Domains](#output\_OCI\_Availability\_Domains) | Output Availability Domain Results |
-| <a name="output_Ubuntu-20_04-aarch64-latest_name"></a> [Ubuntu-20\_04-aarch64-latest\_name](#output\_Ubuntu-20\_04-aarch64-latest\_name) | Output the Ubuntu 20.04 image name |
-| <a name="output_Ubuntu-20_04-aarch64-latest_ocid"></a> [Ubuntu-20\_04-aarch64-latest\_ocid](#output\_Ubuntu-20\_04-aarch64-latest\_ocid) | Output the Ubuntu 20.04 image OCID |
-| <a name="output_oci_home_region"></a> [oci\_home\_region](#output\_oci\_home\_region) | Output the OCI Home Region |
-| <a name="output_oci_ssh_private_key"></a> [oci\_ssh\_private\_key](#output\_oci\_ssh\_private\_key) | Output OCI SSH Private Key |
-| <a name="output_oci_ssh_public_key"></a> [oci\_ssh\_public\_key](#output\_oci\_ssh\_public\_key) | Output OCI SSH Public Key |
 <!-- END_TF_DOCS -->
 
 
