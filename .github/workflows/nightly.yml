@@ -1,22 +1,20 @@
 ---
-name: "latest-release"
+name: "Nightly-Build"
 
 on:
-  push:
-    branches:
-      - "main"
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
 
 jobs:
 
-  tagged-release:
-    name: "Latest Release"
+  nightly-build:
     runs-on: "ubuntu-latest"
 
     steps:
       # ...
       - name: "Build & test"
         run: |
-          echo "done!"
+          echo "done nightly!"
 
       - name: 'Checkout repo'
         uses: actions/checkout@v5
@@ -31,8 +29,8 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          automatic_release_tag: "nightly"
           prerelease: false
-          title: "ORM Latest Development Build"
+          title: "ORM Nightly Build"
           files: |
-            oci-ampere-a1-DeathStarBench-latest.zip
+            oci-ampere-a1-DeathStarBench-nightly.zip
